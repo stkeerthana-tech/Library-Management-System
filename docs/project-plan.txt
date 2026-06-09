@@ -1,18 +1,30 @@
 Project Title:
 Library Management System
 
-Objective:
-To develop a web-based Library Management System for managing books, users, issue and return operations.
+Problem Statement:
+Many libraries still manage books and member records manually, leading to errors and inefficiency. This project aims to automate library operations digitally.
+
+Objectives:
+1. Automate library operations.
+2. Manage books efficiently.
+3. Manage users and members.
+4. Track issue and return transactions.
+5. Calculate fines automatically.
 
 Modules:
-1. User Management
-2. Book Management
-3. Issue Book Management
-4. Return Book Management
-5. Fine Management
+1. Authentication Management
+2. User Management
+3. Book Management
+4. Issue Book Management
+5. Return Book Management
+6. Fine Management
 
 Technologies:
 Frontend: HTML, CSS, JavaScript
 Backend: Java, Spring Boot
 Database: MySQL
 Version Control: Git, GitHub
+
+Future Enhancements:
+1. Email Notification System
+2. Barcode Integration
