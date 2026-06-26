@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — BookBridge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =========================== NAVIGATION BAR =========================== -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">BB</span>
+        BookBridge
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html" class="active">Login</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="issue-book.html">Issue Book</a></li>
+        <li><a href="return-book.html">Return Book</a></li>
+      </ul>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================== LOGIN FORM =========================== -->
+  <main class="auth-wrap">
+    <div class="auth-card">
+      <span class="tab" aria-hidden="true"></span>
+
+      <h1>Welcome back</h1>
+      <p class="auth-sub">Sign in to access the library admin dashboard.</p>
+
+      <!-- Demo hint: there is no real backend, so any valid-looking
+           email/password combination will succeed. -->
+      <div class="demo-hint">
+        Demo mode: any email + a password of 6+ characters will log you in.
+      </div>
+
+      <!-- Alert box for success/error feedback, toggled by script.js -->
+      <div id="login-alert" class="alert" role="alert"></div>
+
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@library.com" autocomplete="email" />
+          <span class="field-error" id="email-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" />
+          <span class="field-error" id="password-error"></span>
+        </div>
+
+        <div class="form-meta">
+          <label><input type="checkbox" id="remember-me" /> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+
+      <p class="form-note">Not a member yet? <a href="#">Contact your library administrator</a></p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

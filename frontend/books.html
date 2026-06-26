@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manage Books — BookBridge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <!-- =========================== SIDEBAR NAVIGATION =========================== -->
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-brand">
+        <span class="brand-mark">BB</span>
+        BookBridge
+      </a>
+
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html"><span class="icon">&#128202;</span> Dashboard</a></li>
+        <li><a href="books.html" class="active"><span class="icon">&#128218;</span> Manage Books</a></li>
+        <li><a href="issue-book.html"><span class="icon">&#128228;</span> Issue Book</a></li>
+        <li><a href="return-book.html"><span class="icon">&#128229;</span> Return Book</a></li>
+        <li><a href="index.html"><span class="icon">&#127968;</span> Public Site</a></li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="login.html" class="btn btn-secondary" style="color: var(--paper-raised); border-color: rgba(246,241,231,0.4);">Log Out</a>
+      </div>
+    </aside>
+
+    <div class="sidebar-scrim"></div>
+
+    <!-- =========================== MAIN CONTENT =========================== -->
+    <div class="main-content">
+      <header class="topbar">
+        <div style="display:flex; align-items:center;">
+          <button class="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
+          <div>
+            <h1>Manage Books</h1>
+            <p class="topbar-sub">Search, filter, and maintain your library's catalog.</p>
+          </div>
+        </div>
+        <a href="login.html" class="btn btn-secondary btn-sm">Log Out</a>
+      </header>
+
+      <div class="content-area">
+
+        <!-- ===================== TOOLBAR: SEARCH + ADD BOOK ===================== -->
+        <div class="toolbar">
+          <div class="search-box">
+            <span class="search-icon">&#128269;</span>
+            <input type="text" id="book-search" placeholder="Search by title, author, or ID..." />
+          </div>
+
+          <div class="toolbar-actions">
+            <select id="category-filter" class="filter-select">
+              <option value="all">All Categories</option>
+              <option value="Technology">Technology</option>
+              <option value="Fiction">Fiction</option>
+              <option value="Science">Science</option>
+              <option value="History">History</option>
+              <option value="Self-Help">Self-Help</option>
+            </select>
+            <button class="btn btn-primary" id="open-add-book-btn">+ Add Book</button>
+          </div>
+        </div>
+
+        <!-- ===================== BOOKS TABLE ===================== -->
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Book ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Total Copies</th>
+                <th>Available</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <!-- Rows are rendered dynamically by script.js from sample data -->
+            <tbody id="books-tbody"></tbody>
+          </table>
+
+          <div class="empty-state hidden" id="books-empty-state">
+            <div class="icon">&#128218;</div>
+            <p>No books match your search. Try a different keyword or clear the filter.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================== ADD BOOK MODAL =========================== -->
+  <div class="modal-overlay" id="add-book-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Add New Book</h2>
+        <button class="modal-close" id="close-add-book-btn" aria-label="Close">&times;</button>
+      </div>
+
+      <form id="add-book-form" novalidate>
+        <div class="form-group">
+          <label for="new-book-title">Title</label>
+          <input type="text" id="new-book-title" placeholder="e.g. The Great Gatsby" />
+          <span class="field-error" id="new-book-title-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="new-book-author">Author</label>
+          <input type="text" id="new-book-author" placeholder="e.g. F. Scott Fitzgerald" />
+          <span class="field-error" id="new-book-author-error"></span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="new-book-category">Category</label>
+            <select id="new-book-category">
+              <option value="">Select category</option>
+              <option value="Technology">Technology</option>
+              <option value="Fiction">Fiction</option>
+              <option value="Science">Science</option>
+              <option value="History">History</option>
+              <option value="Self-Help">Self-Help</option>
+            </select>
+            <span class="field-error" id="new-book-category-error"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="new-book-copies">Total Copies</label>
+            <input type="number" id="new-book-copies" min="1" placeholder="e.g. 3" />
+            <span class="field-error" id="new-book-copies-error"></span>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="cancel-add-book-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Book</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

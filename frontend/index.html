@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookBridge — Library Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =========================== NAVIGATION BAR =========================== -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">BB</span>
+        BookBridge
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="issue-book.html">Issue Book</a></li>
+        <li><a href="return-book.html">Return Book</a></li>
+      </ul>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================== HERO SECTION =========================== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="hero-eyebrow">Built for librarians &amp; readers</span>
+        <h1>The <em>Library Management System</em> that keeps every shelf in order</h1>
+        <p class="hero-lede">
+          Catalog books, track who borrowed what, and keep your circulation desk
+          running smoothly — all from one clean, fast dashboard.
+        </p>
+        <div class="hero-actions">
+          <a href="login.html" class="btn btn-primary">Login to Dashboard</a>
+          <a href="books.html" class="btn btn-secondary">Browse Catalog</a>
+        </div>
+      </div>
+
+      <!-- Signature visual: a CSS-only stacked card-catalog illustration -->
+      <div class="catalog-stack" aria-hidden="true">
+        <div class="catalog-drawer d1">
+          <span class="tab"></span>
+          <div class="card-line"></div>
+          <div class="card-line"></div>
+          <div class="card-line accent"></div>
+        </div>
+        <div class="catalog-drawer d2">
+          <span class="tab"></span>
+          <div class="card-line"></div>
+          <div class="card-line"></div>
+          <div class="card-line accent"></div>
+        </div>
+        <div class="catalog-drawer d3">
+          <span class="tab"></span>
+          <div class="card-line"></div>
+          <div class="card-line"></div>
+          <div class="card-line accent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== FEATURES SECTION =========================== -->
+  <section class="section">
+    <div class="section-heading">
+      <span class="hero-eyebrow">What you get</span>
+      <h2>Everything a circulation desk needs</h2>
+      <p>Four core tools that cover the day-to-day work of running a library.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#128218;</div>
+        <h3>Book Catalog</h3>
+        <p>Search, filter, and manage your full collection with available-copy tracking built in.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">&#128196;</div>
+        <h3>Issue &amp; Return</h3>
+        <p>Issue books to members and process returns in seconds, with live availability lookups.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">&#128202;</div>
+        <h3>Live Dashboard</h3>
+        <p>See total books, available copies, registered users, and issued books at a glance.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">&#128274;</div>
+        <h3>Secure Login</h3>
+        <p>A dedicated admin login keeps catalog management restricted to library staff.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">&#128241;</div>
+        <h3>Works Everywhere</h3>
+        <p>A fully responsive layout that adapts from the front desk monitor to a phone in hand.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">&#9889;</div>
+        <h3>Fast &amp; Lightweight</h3>
+        <p>No frameworks, no build step — just clean HTML, CSS, and JavaScript that loads instantly.</p>
+      </div>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">&#128424;</div>
+      <h3>Barcode Support</h3>
+     <p>Generate and scan book barcodes for faster issue and return operations.</p>
+    </div>
+
+   <div class="feature-card">
+      <div class="feature-icon">&#9993;</div>
+      <h3>Email Notifications</h3>
+      <p>Automatically notify users about issued books, due dates, and overdue returns.</p>
+   </div>
+  </section>
+
+  <!-- =========================== CALL TO ACTION BAND =========================== -->
+  <section class="cta-band">
+    <h2>Ready to take a look inside?</h2>
+    <p>Log in with any email and password to explore the admin dashboard — it's a fully working demo.</p>
+    <a href="login.html" class="btn btn-primary">Get Started</a>
+  </section>
+
+  <!-- =========================== FOOTER =========================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <a href="index.html" class="brand">
+          <span class="brand-mark">BB</span>
+          BookBridge
+        </a>
+        <p style="max-width: 32ch; font-size: 0.88rem;">
+          A clean, modern library management system built with plain HTML, CSS, and JavaScript.
+        </p>
+      </div>
+
+      <div>
+        <h4>Navigate</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="books.html">Books</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Actions</h4>
+        <ul class="footer-links">
+          <li><a href="issue-book.html">Issue a Book</a></li>
+          <li><a href="return-book.html">Return a Book</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 BookBridge Library Management System. Built as a frontend demo project.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

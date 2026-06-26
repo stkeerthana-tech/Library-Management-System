@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Issue Book — BookBridge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <!-- =========================== SIDEBAR NAVIGATION =========================== -->
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-brand">
+        <span class="brand-mark">BB</span>
+        BookBridge
+      </a>
+
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html"><span class="icon">&#128202;</span> Dashboard</a></li>
+        <li><a href="books.html"><span class="icon">&#128218;</span> Manage Books</a></li>
+        <li><a href="issue-book.html" class="active"><span class="icon">&#128228;</span> Issue Book</a></li>
+        <li><a href="return-book.html"><span class="icon">&#128229;</span> Return Book</a></li>
+        <li><a href="index.html"><span class="icon">&#127968;</span> Public Site</a></li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="login.html" class="btn btn-secondary" style="color: var(--paper-raised); border-color: rgba(246,241,231,0.4);">Log Out</a>
+      </div>
+    </aside>
+
+    <div class="sidebar-scrim"></div>
+
+    <!-- =========================== MAIN CONTENT =========================== -->
+    <div class="main-content">
+      <header class="topbar">
+        <div style="display:flex; align-items:center;">
+          <button class="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
+          <div>
+            <h1>Issue Book</h1>
+            <p class="topbar-sub">Lend a book to a registered library member.</p>
+          </div>
+        </div>
+        <a href="login.html" class="btn btn-secondary btn-sm">Log Out</a>
+      </header>
+
+      <div class="content-area">
+        <div class="form-page-grid">
+
+          <!-- ===================== ISSUE BOOK FORM ===================== -->
+          <div class="panel">
+            <div class="panel-header">
+              <h2>Issue Details</h2>
+            </div>
+
+            <div id="issue-alert" class="alert" role="alert"></div>
+
+            <form id="issue-book-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="issue-user-id">User ID</label>
+                  <input type="text" id="issue-user-id" placeholder="e.g. U1023" />
+                  <span class="field-error" id="issue-user-id-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="issue-book-id">Book ID</label>
+                  <input type="text" id="issue-book-id" placeholder="e.g. BK001" />
+                  <span class="field-error" id="issue-book-id-error"></span>
+                </div>
+              </div>
+
+              <!-- Live lookup preview, filled in by script.js as the Book ID is typed -->
+              <div class="lookup-result" id="issue-lookup-result" style="background:var(--brass-soft); border-color:#d9c290; color:#5c4719;"></div>
+
+              <div class="form-group">
+                <label for="issue-date">Issue Date</label>
+                <input type="date" id="issue-date" />
+                <span class="field-error" id="issue-date-error"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">Issue Book</button>
+            </form>
+          </div>
+
+          <!-- ===================== INFO SIDE PANEL ===================== -->
+          <div class="info-panel">
+            <h3>Before you issue</h3>
+            <p>A quick checklist for the circulation desk.</p>
+            <ul class="info-list">
+              <li><span class="icon">&#9989;</span> Confirm the member's User ID is active.</li>
+              <li><span class="icon">&#9989;</span> Check the Book ID has at least one available copy.</li>
+              <li><span class="icon">&#9989;</span> The issue date defaults to today, but can be changed.</li>
+              <li><span class="icon">&#9989;</span> Try Book ID <strong>BK001</strong> or <strong>BK003</strong> for this demo.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

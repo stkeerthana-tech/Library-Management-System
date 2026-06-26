@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Return Book — BookBridge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <!-- =========================== SIDEBAR NAVIGATION =========================== -->
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-brand">
+        <span class="brand-mark">BB</span>
+        BookBridge
+      </a>
+
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html"><span class="icon">&#128202;</span> Dashboard</a></li>
+        <li><a href="books.html"><span class="icon">&#128218;</span> Manage Books</a></li>
+        <li><a href="issue-book.html"><span class="icon">&#128228;</span> Issue Book</a></li>
+        <li><a href="return-book.html" class="active"><span class="icon">&#128229;</span> Return Book</a></li>
+        <li><a href="index.html"><span class="icon">&#127968;</span> Public Site</a></li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="login.html" class="btn btn-secondary" style="color: var(--paper-raised); border-color: rgba(246,241,231,0.4);">Log Out</a>
+      </div>
+    </aside>
+
+    <div class="sidebar-scrim"></div>
+
+    <!-- =========================== MAIN CONTENT =========================== -->
+    <div class="main-content">
+      <header class="topbar">
+        <div style="display:flex; align-items:center;">
+          <button class="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
+          <div>
+            <h1>Return Book</h1>
+            <p class="topbar-sub">Process a returned book and update its availability.</p>
+          </div>
+        </div>
+        <a href="login.html" class="btn btn-secondary btn-sm">Log Out</a>
+      </header>
+
+      <div class="content-area">
+        <div class="form-page-grid">
+
+          <!-- ===================== RETURN BOOK FORM ===================== -->
+          <div class="panel">
+            <div class="panel-header">
+              <h2>Return Details</h2>
+            </div>
+
+            <div id="return-alert" class="alert" role="alert"></div>
+
+            <form id="return-book-form" novalidate>
+              <div class="form-group">
+                <label for="return-book-id">Book ID</label>
+                <input type="text" id="return-book-id" placeholder="e.g. BK002" />
+                <span class="field-error" id="return-book-id-error"></span>
+              </div>
+
+              <!-- Live lookup preview, filled in by script.js as the Book ID is typed -->
+              <div class="lookup-result" id="return-lookup-result" style="background:var(--success-soft); border-color:#b9d8c6; color:var(--success);"></div>
+
+              <div class="form-group">
+                <label for="return-date">Return Date</label>
+                <input type="date" id="return-date" />
+                <span class="field-error" id="return-date-error"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">Return Book</button>
+            </form>
+          </div>
+
+          <!-- ===================== INFO SIDE PANEL ===================== -->
+          <div class="info-panel">
+            <h3>Currently issued (demo data)</h3>
+            <p>These Book IDs have active issue records you can try returning.</p>
+            <ul class="info-list">
+              <li><span class="icon">&#128218;</span> <strong>BK002</strong> — To Kill a Mockingbird</li>
+              <li><span class="icon">&#128218;</span> <strong>BK005</strong> — Clean Code</li>
+              <li><span class="icon">&#128218;</span> <strong>BK008</strong> — Cosmos</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

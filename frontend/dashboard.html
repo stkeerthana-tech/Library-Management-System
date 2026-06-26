@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — BookBridge</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app-shell">
+
+    <!-- =========================== SIDEBAR NAVIGATION =========================== -->
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-brand">
+        <span class="brand-mark">BB</span>
+        BookBridge
+      </a>
+
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html" class="active"><span class="icon">&#128202;</span> Dashboard</a></li>
+        <li><a href="books.html"><span class="icon">&#128218;</span> Manage Books</a></li>
+        <li><a href="issue-book.html"><span class="icon">&#128228;</span> Issue Book</a></li>
+        <li><a href="return-book.html"><span class="icon">&#128229;</span> Return Book</a></li>
+        <li><a href="index.html"><span class="icon">&#127968;</span> Public Site</a></li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="login.html" class="btn btn-secondary" style="color: var(--paper-raised); border-color: rgba(246,241,231,0.4);">Log Out</a>
+      </div>
+    </aside>
+
+    <!-- Dark overlay shown behind the sidebar when it's open on mobile -->
+    <div class="sidebar-scrim"></div>
+
+    <!-- =========================== MAIN CONTENT =========================== -->
+    <div class="main-content">
+      <header class="topbar">
+        <div style="display:flex; align-items:center;">
+          <button class="mobile-menu-btn" aria-label="Open menu">&#9776;</button>
+          <div>
+            <h1>Dashboard</h1>
+            <p class="topbar-sub">Welcome back — here's what's happening in the library today.</p>
+          </div>
+        </div>
+        <a href="login.html" class="btn btn-secondary btn-sm">Log Out</a>
+      </header>
+
+      <div class="content-area">
+
+        <!-- ===================== STATISTICS CARDS ===================== -->
+        <!-- Values are filled in by initDashboardStats() in script.js -->
+        <div class="stats-grid">
+          <div class="stat-card accent-forest">
+            <div class="stat-icon">&#128218;</div>
+            <div class="stat-value" id="stat-total-books">0</div>
+            <div class="stat-label">Total Books</div>
+          </div>
+
+          <div class="stat-card accent-success">
+            <div class="stat-icon">&#9989;</div>
+            <div class="stat-value" id="stat-available-books">0</div>
+            <div class="stat-label">Available Books</div>
+          </div>
+
+          <div class="stat-card accent-brass">
+            <div class="stat-icon">&#128101;</div>
+            <div class="stat-value" id="stat-registered-users">0</div>
+            <div class="stat-label">Registered Users</div>
+          </div>
+
+          <div class="stat-card accent-danger">
+            <div class="stat-icon">&#128228;</div>
+            <div class="stat-value" id="stat-issued-books">0</div>
+            <div class="stat-label">Issued Books</div>
+          </div>
+        </div>
+
+        <!-- ===================== QUICK ACTIONS ===================== -->
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Quick Actions</h2>
+          </div>
+          <div class="quick-actions">
+            <a href="books.html" class="quick-action">
+              <span class="icon">&#10133;</span>
+              <span class="label">Add Book</span>
+            </a>
+            <a href="issue-book.html" class="quick-action">
+              <span class="icon">&#128228;</span>
+              <span class="label">Issue Book</span>
+            </a>
+            <a href="return-book.html" class="quick-action">
+              <span class="icon">&#128229;</span>
+              <span class="label">Return Book</span>
+            </a>
+            <a href="books.html" class="quick-action">
+              <span class="icon">&#128269;</span>
+              <span class="label">Search Catalog</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- ===================== RECENT ACTIVITY + LIBRARY INFO ===================== -->
+        <div class="two-col">
+          <div class="panel">
+            <div class="panel-header">
+              <h2>Recently Issued</h2>
+              <a href="issue-book.html" class="btn btn-secondary btn-sm">Issue New</a>
+            </div>
+            <ul id="recent-activity" style="list-style:none; display:flex; flex-direction:column; gap:12px; font-size:0.9rem; color:var(--ink-soft);">
+              <!-- Populated by script.js -->
+            </ul>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h2>This Week</h2>
+            </div>
+            <p style="color:var(--ink-soft); font-size:0.9rem;">
+              Keep an eye on overdue returns and low-stock titles from the Books page.
+              Use Issue Book and Return Book to keep these numbers up to date.
+            </p>
+            <a href="books.html" class="btn btn-primary btn-block">Go to Book Management</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
